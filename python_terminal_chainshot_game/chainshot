@@ -1,0 +1,189 @@
+ram_list=[]
+score=0
+removed_cells=0
+def txt_to_list():
+    board_file=open("input.txt","r")
+    board=[]
+    for line in board_file:
+        board.append(list(map(int,line.split(" "))))
+    return board
+def remover(board,row,col,number):
+
+    #merkez sayıyı x ile değiştir
+    global removed_cells
+    board[row][col] = "x"
+    test=0
+    #komşuları kontrol et aynı olanlaır x ile değiştire
+    try:
+        if col + 1 < len(board[0]) and board[row][col + 1] == number:
+            board[row][col + 1] = "x"
+            removed_cells += 1
+            ram_list.append((str(row) + " " + str(col + 1)))
+
+        if col - 1 >= 0 and board[row][col - 1] == number:
+            board[row][col - 1] = "x"
+            removed_cells += 1
+            ram_list.append((str(row) + " " + str(col - 1)))
+
+        if row + 1 < len(board) and board[row + 1][col] == number:
+            board[row + 1][col] = "x"
+            removed_cells += 1
+            ram_list.append((str(row + 1) + " " + str(col)))
+
+        if row - 1 >= 0 and board[row - 1][col] == number:
+            board[row - 1][col] = "x"
+            removed_cells += 1
+            ram_list.append((str(row - 1) + " " + str(col)))
+
+    except:
+        pass
+
+    return ram(board,number)
+def ram(board,number):
+    global removed_cells
+
+    if ram_list==[]:
+        if removed_cells >0:
+            global score
+            score = score + (removed_cells + 1) * number
+            removed_cells=0
+            return shuffle(board)
+
+
+    index=ram_list[0].split(" ")
+    row=int(index[0])
+    col=int(index[1])
+    ram_list.pop(0)
+    return remover(board,row,col,number)
+
+
+
+    #değiştirilen indexleri rame gönder
+def matrix_ceviri(board):
+    new_board=[]
+    row_len=len(board)
+    col_len=len(board[0])
+    for a1 in range(col_len):
+        temporary_row=[]
+        for a2 in range(row_len):
+            temporary_row.append(board[a2][a1])
+        new_board.append(temporary_row)
+    return new_board
+def shuffle(board):
+    #önce matrixi çevir
+    board=matrix_ceviri(board)
+    #sonra xleri sil sondan y ekle
+    for row_number,row_content in enumerate(board):
+        for index_num,index in enumerate(row_content):
+            if board[row_number][index_num]=="x":
+                board[row_number].pop(index_num)
+                board[row_number].insert(0,"y")
+                board=matrix_ceviri(board)
+                return shuffle(board)
+    board = matrix_ceviri(board)
+
+    return row_col_remover(board)
+
+def gameover_check(board):
+    for row,row_content in enumerate(board):
+        for col,index in enumerate(row_content):
+            if col + 1 < len(board[0]) and type(board[row][col + 1]) == int and board[row][col + 1] == board[row][col]:
+                return gui(board)
+
+            if col - 1 >= 0 and type(board[row][col - 1]) == int and board[row][col - 1] == board[row][col]:
+                return gui(board)
+
+            if row + 1 < len(board) and type(board[row + 1][col]) == int and board[row + 1][col] == board[row][col]:
+                return gui(board)
+
+            if row - 1 >= 0 and type(board[row - 1][col]) == int and board[row - 1][col] == board[row][col]:
+                return gui(board)
+    print("there is no cell that has no neighbor with the same value, it means that the game is over.")
+    try:
+        show_board(board)
+    except:
+        pass
+    return input("")
+def row_col_remover(board):
+
+    #row control
+    def row_remover(board):
+        for row_num,row_content in enumerate(board):
+            if all(index=="y" for index in row_content):
+                board.pop(row_num)
+                return row_remover(board)
+        return(board)
+    board=row_remover(board)
+
+    #i added this if statement to prevent erors bcause col function which is below this text. occurs error with empty list input
+    if board==[]:
+        gameover_check(board)
+    #col control
+    def col_remover(board):
+        board=matrix_ceviri(board)
+        for row_num,row_content in enumerate(board):
+            if all(index=="y" for index in row_content):
+                board.pop(row_num)
+                board = matrix_ceviri(board)
+                return col_remover(board)
+        board = matrix_ceviri(board)
+        return(board)
+    board=col_remover(board)
+
+    return gameover_check(board)
+
+def show_board(board):
+    print("-"*((len(board[0])*2)-1),end="|")
+    print("SCORE:",score)
+    for row_num,row_content in enumerate(board):
+
+        for col_num,index in enumerate(row_content):
+            if board[row_num][col_num]!="y":
+                print(str(board[row_num][col_num]),end=" ")
+            else:
+                print(" ",end=" ")
+        print("\n")
+    print("-" * ((len(board[0]) * 2) - 1))
+def gui(board):
+    show_board(board)
+    sayilar_raw=input("1 ve n arası row col sayı gir araya başlık koy: ")
+    sayilar=sayilar_raw.split(" ")
+    row=int(sayilar[0])-1
+    col = int(sayilar[1])-1
+    try:
+        if(type(board[row][col])==str):
+            print("Please enter a correct size(you selected empty cell)")
+            return gui(board)
+    except:
+        print("Please enter a correct size")
+        return gui(board)
+
+    #seçilen indexteki sayının bu sayının tek olup olmadığın kontrolü
+    counter = 0
+
+    if col + 1 < len(board[0]) and type(board[row][col + 1]) == int and board[row][col + 1] == board[row][col]:
+        counter += 1
+
+    if col - 1 >= 0 and type(board[row][col - 1]) == int and board[row][col - 1] == board[row][col]:
+        counter += 1
+
+    if row + 1 < len(board) and type(board[row + 1][col]) == int and board[row + 1][col] == board[row][col]:
+        counter += 1
+
+    if row - 1 >= 0 and type(board[row - 1][col]) == int and board[row - 1][col] == board[row][col]:
+        counter += 1
+
+    if counter < 1:
+        print("No movement happened, try again")
+        return gui(board)
+
+    number = board[row][col]
+
+    return remover(board,row,col,number)
+
+def main():
+    board=txt_to_list()
+    gui(board)
+
+if __name__=="__main__":
+    main()
