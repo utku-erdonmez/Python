@@ -1,7 +1,8 @@
-""" This game is a collect game where of each turn you should collect two or more numbers based on spatial relationship.
+""" 
+This game is a collect game where of each turn you should collect two or more numbers based on spatial relationship.
 That is, once you pick a cell, all neighboring cells (including the cell you picked) that contain the same number will disappear from the board.
 If a cell disappears in a column, that column moves down to fill the row with blank cells. this game continues until there is no cell that has no neighbor with the same value,
- it means that the game is over.
+it means that the game is over.
 
 python3 chainshot.py input.txt
 """
