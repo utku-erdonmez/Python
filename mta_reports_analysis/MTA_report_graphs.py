@@ -1,7 +1,5 @@
 """
-I made this project to use Panda and Matplotlib together. 
-I wanted to work with a bad dataset, but the only problem was typos, so I couldn't do what I wanted.
-But I still finished the project.
+purpose of this project was to analyze a bad dataset.
 graphs demonstrates the research topics by amount(miktarına_göre_araştırma_konuları) 
 and researchs on different types of coal through the years(yıllara göre Kömür tipleri hakkına yapılan araştırmalar).
 
