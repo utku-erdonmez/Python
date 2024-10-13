@@ -1,0 +1,42 @@
+                     |             |    |           |
+       _` |  _ \ _ \   \   -_)  _|  _ \ |  _` |  _| | /
+     \__, |\___/.__/_| _|\___|_|_)_.__/_|\__,_|\__|_\_\
+     ____/     _|
+
+     ==== Last Updated: October 03rd, 2024 ====
+
+[ DIR ] About	/about
+
+==== Content ====
+[ DIR ] Phlog	/phlog
+[ DIR ] Writing	/writing
+[ DIR ] Explorations	/explorations
+[ DIR ] Choose Your Own Adventure (anonradio)	/cyoa
+[ DIR ] Story Time	/storytime
+
+[ DIR ] Recipes	/recipebox
+[ DIR ] Games	/games
+
+==== Resources ====
+[ DIR ] The Bible (ESV)	/bible
+[ DIR ] Archives	/archive
+
+==== Books ====
+[ FILE ] Reading	/reading/currentbooks.txt
+[ FILE ] Read	/reading/recentbooks.txt
+
+==== External Resources ====
+[ DIR ] Phlogs	/phlogs
+[ DIR ] Gopher Places	/places
+[ DIR ] Web Places	/http
+
+==== Software and Tech Things ====
+[ HTML ] Burrow - Gopher Helper	URL:http://github.com/jamestomasino/burrow
+[ FILE ] Phlog RSS Feed	/rss.xml
+
+==== Websites ====
+[ HTML ] All Sites	URL:http://www.tomasino.org/
+[ HTML ] Blog	URL:http://blog.tomasino.org/
+[ HTML ] Labs Blog	URL:http://labs.tomasino.org/
+[ HTML ] Resume	URL:http://jamestomasino.com/
+['.']

@@ -1,0 +1,42 @@
+i                     |             |    |           |		gopher.black	70
+i       _` |  _ \ _ \   \   -_)  _|  _ \ |  _` |  _| | /		gopher.black	70
+i     \__, |\___/.__/_| _|\___|_|_)_.__/_|\__,_|\__|_\_\		gopher.black	70
+i     ____/     _|		gopher.black	70
+i		gopher.black	70
+i     ==== Last Updated: October 03rd, 2024 ====		gopher.black	70
+i		gopher.black	70
+1About	/about	gopher.black	70
+i		gopher.black	70
+i==== Content ====		gopher.black	70
+1Phlog	/phlog	gopher.black	70
+1Writing	/writing	gopher.black	70
+1Explorations	/explorations	gopher.black	70
+1Choose Your Own Adventure (anonradio)	/cyoa	gopher.black	70
+1Story Time	/storytime	gopher.black	70
+i		gopher.black	70
+1Recipes	/recipebox	gopher.black	70
+1Games	/games	gopher.black	70
+i		gopher.black	70
+i==== Resources ====		gopher.black	70
+1The Bible (ESV)	/bible	gopher.black	70
+1Archives	/archive	gopher.black	70
+i		gopher.black	70
+i==== Books ====		gopher.black	70
+0Reading	/reading/currentbooks.txt	gopher.black	70
+0Read	/reading/recentbooks.txt	gopher.black	70
+i		gopher.black	70
+i==== External Resources ====		gopher.black	70
+1Phlogs	/phlogs	gopher.black	70
+1Gopher Places	/places	gopher.black	70
+1Web Places	/http	gopher.black	70
+i		gopher.black	70
+i==== Software and Tech Things ====		gopher.black	70
+hBurrow - Gopher Helper	URL:http://github.com/jamestomasino/burrow	gopher.black	70
+0Phlog RSS Feed	/rss.xml	gopher.black	70
+i		gopher.black	70
+i==== Websites ====		gopher.black	70
+hAll Sites	URL:http://www.tomasino.org/	gopher.black	70
+hBlog	URL:http://blog.tomasino.org/	gopher.black	70
+hLabs Blog	URL:http://labs.tomasino.org/	gopher.black	70
+hResume	URL:http://jamestomasino.com/	gopher.black	70
+.
