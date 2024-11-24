@@ -1,0 +1,22 @@
+POST /log?format=json&hasfast=true&authuser=0 HTTP/2
+Host: play.google.com
+Cookie:
+Content-Length: 1022
+User-Agent: Mozilla/5.0
+Sec-Ch-Ua-Platform: "Windows"
+Accept-Language: tr-TR,tr;q=0.9
+Sec-Ch-Ua: "Not?A_Brand";v="99", "Chromium";v="130"
+Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+X-Goog-Authuser: 0
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Origin: https://www.youtube.com
+X-Client-Data: CKyJywE=
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://www.youtube.com/
+Accept-Encoding: gzip, deflate, br
+testPassword: u=4, i
+
+[[1,null,null,null,null,null,null,null,null]]
